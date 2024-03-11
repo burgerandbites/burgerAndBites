@@ -3,7 +3,6 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6; 
     background-repeat: no-repeat;
-    overflow: hidden;
 }
 .background-container {
   position: fixed;
