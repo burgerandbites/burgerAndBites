@@ -1,72 +1,123 @@
 body {
-    background-image: url("../Images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    line-height: 1.6; 
-    height: 100vh; /* 100% of the viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0; /* Remove default margin */
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  line-height: 1.6; 
+  background-repeat: no-repeat;
 }
-
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Images/background.jpg") ;
+  background-size: cover;
+  z-index: -1; /* Place the background behind other content*/ 
+}
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100vw; /* 100% of the viewport width */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+.grid-container > div {
+  text-align: center;
+  font-size: 30px;
+}
+@media screen and (min-width: 1080px) {
+  .grid-container {
+      flex-direction: row;
+  }
+  .left {
+      flex: 6; /* Take up 8/16 of the available space */
+  }
+  .right {
+      flex: 6; /* Take up 8/16 of the available space */
+  }
+  .rightP {
+      flex: 6; /* Take up 8/16 of the available space */
+}
+}
+.left {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+  order: 1; /* Specify the order in which the items should appear in a flex container */
+}
+.right {
+  text-align: center;
+  width: 100%;
+  background-color: #2a2f35; /* Darker grey background color for container */
+  border: 5px solid #fdc40c; /* Yellow border color */
+  padding: 20px;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  color: #fff;
+  order: 2; /* Specify the order in which the items should appear in a flex container */
+}
+.rightP {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  color: #fff;
+  order: 2; /* Specify the order in which the items should appear in a flex container */
+}
+.logo{
+  height: 70%;
+  width: 70%;
+}
+.logoP{
+  height: 50%;
+  width: 50%;
+}
 /*Pizza's*/
-  .Food{
-    display: flex;
-    justify-content:space-between;
-    border-bottom :#fff;
-  }
-
-  .hrow{
-    margin-bottom: 3%;
-    border-bottom: 2px solid #fdc40c;
-  }
-  .irow{
-    margin-bottom: 3%;
-  }
-  
-  .row {
-    background-color: #2a2f35; /* Darker grey background color for container */
-    border: 5px solid #fdc40c; /* Yellow border color */
-    padding: 20px;
-    border-radius: 10px; /* Optional: Add rounded corners */
-    margin-top: 20px; /* Optional: Add some margin at the top */
-    color:#fff;
-  }
-
-  .price{
-    color: #fdc40c;
-  }
-  
-  .extras{
-    background-color: #2a2f35; /* Darker grey background color for container */
-    border: 5px solid #fdc40c; /* Yellow border color */
-    padding: 20px;
-    border-radius: 10px; /* Optional: Add rounded corners */
-    margin-top: 20px; /* Optional: Add some margin at the top */
-    color:#fff;
-  }
-  
-  /* Add a solid line between columns */
-  .col-md-6 {
-    border-right: 2px solid #fdc40c;
-  }
-  
-  /* Remove right border from the last column to avoid extra line */
-  .col-md-6:last-child {
-    border-right: none;
-  }
-
+.Food{
+  display: flex;
+  justify-content:space-between;
+  border-bottom :#fff;
+}
+.row {
+  background-color: #2a2f35; /* Darker grey background color for container */
+  border: 5px solid #fdc40c; /* Yellow border color */
+  padding: 20px;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  color:#fff;
+}
+.hrow{
+  margin-bottom: 3%;
+  border-bottom: 2px solid #fdc40c;
+}
+.irow{
+  margin-bottom: 3%;
+}
+.price{
+  color: #fdc40c;
+}
+.extras{
+  background-color: #2a2f35; /* Darker grey background color for container */
+  border: 5px solid #fdc40c; /* Yellow border color */
+  padding: 20px;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  margin-top: 20px; /* Optional: Add some margin at the top */
+  color:#fff;
+  order: 3;
+}
+/* Add a solid line between columns */
+.col-md-6 {
+  border-right: 2px solid #fdc40c;
+}
+/* Remove right border from the last column to avoid extra line */
+.col-md-6:last-child {
+  border-right: none;
+}
 .but{
     background-color: transparent;
     color: #ffffff;
     border: none !important;
     text-decoration: none;
-
   }
-
 .NavBut1{
   background-color: transparent;
     border: 5px solid #fdc40c;
@@ -77,11 +128,9 @@ body {
     color: #ffffff;
     text-decoration: none;
     width: 100%;
-    margin-bottom: 6%;
     transition: border-color 0.3s ease; /* Add a smooth transition effect for border color */
     text-align: center;
 }
-
-  .NavBut1:hover {
-    border-color: #fff;
-  }
+.NavBut1:hover {
+  border-color: #fff;
+}
