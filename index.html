@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BURGER & BITES</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+  <div class = "grid-container">
+    <div class="empty"></div>
+    <div class="left">
+      <div class="Logo">
+        <img src="Images/mainLogoRemovedBg.png" height="500" width="500" alt="Burger and Bites Logo">
+      </div>
+      <a href="https://www.instagram.com/burger.and.bites?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA==" class="fa fa-instagram"></a>
+      <a href="https://www.facebook.com/profile.php?id=100090618771920&mibextid=hIlR13" class="fa fa-facebook"></a>
+    </div>
+    <div class="right">
+      <h1 class="title">Burger and Bites</h1>
+      <div class="NavBut" onclick="window.location.href='./menuNav.html'">
+          <button type="button" class="but">
+            <h3>MENUS</h3>
+          </button>
+      </div>
+      <div class="NavBut"  onclick="window.location.href='https://maps.app.goo.gl/Y68H1bPoHRrZ4wAL7'">
+          <button type="button" class="but">
+            <h3>LOCATION</h3>
+          </button>
+      </div>
+      <!--Need help with this drop down menu or if you have other ideas please let me know-->
+      <div class="NavBut dropdown">
+        <button onclick="toggleDropdown()" class="but"><h3>CONTACT US</h3></button>
+        <div id="contactDropdown" class="dropdown-content">
+          <a href="tel:+123456789">Call Us</a>
+          <a href="mailto:info@burgerandbites.com">Email Us</a>
+          <!-- Add more contact options as needed -->
+        </div>
+      </div>
+    </div>
+    <div class="empty"></div>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById('contactDropdown');
+        if (dropdown) {
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
+    }
+
+    var contactDropdownBtn = document.getElementById('contactDropdownBtn');
+    if (contactDropdownBtn) {
+        contactDropdownBtn.addEventListener('click', toggleDropdown);
+    }
+
+    window.onclick = function (event) {
+        var dropdown = document.getElementById('contactDropdown');
+        if (dropdown && !event.target.closest('.dropdown')) {
+            dropdown.style.display = 'none';
+        }
+    }
+</script>
+
+
+
+
+
+</body>
+</html>
