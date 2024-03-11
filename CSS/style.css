@@ -1,97 +1,97 @@
 body {
-    background-image: url("../Images/background.jpg");
-    background-size: cover;
     color: #ffffff;
     font-family: Arial, sans-serif;
     line-height: 1.6; 
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
-
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Images/background.jpg") ;
+  background-size: cover;
+  z-index: -1; /* Place the background behind other content*/ 
+}
+.logo{
+  height: 70%;
+  width: 70%;
+}
 .title{
     width: 100%;
     text-align: center;
 }
-
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 100px;
-    padding: 10px;
-    height: 100vh; /* 100% of the viewport height */
-    width: 100vw; /* 100% of the viewport width */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+  height: 96vh; /* 100% of the viewport height */
+  width: 96vw; /* 100% of the viewport width */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
 
-  .grid-container > div {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+.grid-container > div {
+  text-align: center;
+  font-size: 30px;
+}
+@media screen and (min-width: 767px) {
+  .grid-container {
+      flex-direction: row;
   }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
+  .left {
+      flex: 8; /* Take up 1/3 of the available space */
   }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #2a2f35;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  .right {
+      flex: 8; /* Take up 2/3 of the available space */
   }
-  
-  .dropdown-content a {
-    padding: 12px 16px;
-    display: block;
-    cursor: pointer;
-    color: #ffffff; /* Set the text color for dropdown items */
-    text-decoration: none; /* Remove default underline for links */
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #fdc40c;
-    color: #2a2f35; /* Change text color on hover */
-  }
-
+}
 .Lrow{
     border:5px solid #fdc40c ;
 }
-
-  .but{
-    background-color: transparent;
-    color: #ffffff;
-    border: none !important;
-    text-decoration: none;
-
-  }
-
-  .NavBut {
-    background-color: transparent;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    color: #ffffff;
-    text-decoration: none;
-    width: 100%;
-    margin-bottom: 6%;
-    transition: border-color 0.3s ease; /* Add a smooth transition effect for border color */
-    text-align: center;
-  }
-
-  .NavBut:hover {
-    border-color: #fdc40c;
-  }
+.but{
+  background-color: transparent;
+  color: #ffffff;
+  border: none !important;
+  text-decoration: none;
+}
+.NavBut {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #ffffff;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 6%;
+  transition: border-color 0.3s ease; /* Add a smooth transition effect for border color */
+  text-align: center;
+}
+.NavBut:hover {
+  border-color: #fdc40c;
+}
+.left{
+  text-align:center;
+  width: 100%;
+  margin-top: 20px;
+}
+.right{
+  text-align: center;
+  width: 100%;
+  margin-top: 6%;
+  height: 50%;
+}
 .fa {
   overflow: hidden;
   outline: none;
   color: #ffffff;
   text-decoration: none;
-    width: 45%;
+  width: 49%;
 }
-
 .row {
   background-color: #2a2f35; /* Darker grey background color for container */
   border: 5px solid #fdc40c; /* Yellow border color */
@@ -100,13 +100,10 @@ body {
   margin-top: 20px; /* Optional: Add some margin at the top */
   color:#fff;
 }
-
-
 /* Add a solid line between columns */
 .col-md-6 {
   border-right: 2px solid #fdc40c;
 }
-
 /* Remove right border from the last column to avoid extra line */
 .col-md-6:last-child {
   border-right: none;
